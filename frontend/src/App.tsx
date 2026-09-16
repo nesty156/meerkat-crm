@@ -218,7 +218,7 @@ function AppContent({ token, setToken }: { token: string | null; setToken: (toke
           <Tooltip title={collapsed ? t('nav.settings') : ''} placement="right">
             <ListItemButton
               onClick={(event) => handleSettingsMenuToggle(event, collapsed)}
-              selected={isSettingsActive && !settingsMenuOpen}
+              selected={isSettingsActive && (collapsed || !settingsMenuOpen)}
               sx={{
                 justifyContent: collapsed ? 'center' : 'flex-start',
                 px: collapsed ? 2 : 2.5,
